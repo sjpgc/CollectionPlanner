@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Collection Planner</title>
+
+    <link rel="stylesheet" type="text/css" href="app-style/stampsCatalogue.css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script src="app-js/datastorage.js"></script>
+    <script src="app-js/collectionPlanner.js"></script>
+</head>
+<body>
+<div id="stampsCollection" ng-app="collectionPlanner" ng-controller="StampsCatalogueController">
+    <div id="userCollection"></div>
+    <div id="stampsCatalogue">
+        <div class="stampFromCatalogue" ng-repeat="stamp in stampsCatalogue">
+            <img alt="stamp image placeholder" src="images/stamps/{{stamp.area}}/{{stamp.country}}/{{stamp.img}}"/>
+            <span class="stampArea">{{stamp.country}}</span>
+            <span class="stampDescription">{{stamp.year}}. {{stamp.description}}</span>
+            <span>{{stamp.value}} {{stamp.color}}</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
